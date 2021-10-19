@@ -24,3 +24,19 @@ const products = [
 ];
 
 // Declare sua funçao aqui. Nao se esqueça de invocar a função para conseguir testar!
+function filterProducts (category){
+  const result = [];
+  for (let i = 0; i < products.length; i++){
+   let check = products[i].tags.length; let lookingfor = 0;     
+   while (lookingfor <= check){   
+    if (products[i].tags[lookingfor] === category){
+     result.push(products[i]);
+     lookingfor++
+    } else {lookingfor++}
+   }
+  }
+  return result;   
+};
+
+filterProducts('apple');
+console.log(filterProducts('apple'));
